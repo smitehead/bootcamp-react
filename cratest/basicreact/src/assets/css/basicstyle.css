@@ -1,0 +1,15 @@
+.basic {
+  background-color: lightcoral;
+  color: lime;
+  width: 50%;
+  height: 60px;
+  text-align: center;
+}
+p {
+  font-weight: bolder;
+  color: lightblue;
+}
+.title {
+  background-color: navy;
+  color: white;
+}
