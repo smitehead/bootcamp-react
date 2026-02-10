@@ -1,3 +1,18 @@
 /node_modules
 /package-lock.json
 /package.json
+
+# 라이브러리 (용량이 너무 커서 올리면 안 됨)
+node_modules/
+
+# 빌드 결과물 (배포용 파일들)
+dist/
+build/
+
+# 환경변수 파일 (보안상 중요한 비번 같은 게 들어있음)
+.env
+.env.local
+
+# 운영체제/에디터 설정 파일
+.DS_Store
+.vscode/
