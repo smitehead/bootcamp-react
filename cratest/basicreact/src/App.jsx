@@ -14,6 +14,9 @@ import A_basicStyle from "./components/D_style/A_basicStyle.jsx";
 import B_ModulTest from "./components/D_style/B_ModulTest.jsx";
 import C_StyledComponent from "./components/D_style/C_StyledComponent.jsx";
 import D_StyledComponentProps from "./components/D_style/D_StyledComponentProps.jsx";
+import A_EventContainer from "./components/E_event/A_EventContainer.jsx";
+import DataContainer from "./components/F_datamanage/DataContainer.jsx";
+
 function App() {
   return (
     <>
@@ -36,6 +39,11 @@ function App() {
       <A_basicStyle></A_basicStyle>
       <B_ModulTest />
       <C_StyledComponent></C_StyledComponent>
+
+      <h1>이벤트 이용하기</h1>
+      <A_EventContainer></A_EventContainer>
+      <h1>리액트에서 데이터 관리하기</h1>
+      <DataContainer />
     </>
   );
 }
