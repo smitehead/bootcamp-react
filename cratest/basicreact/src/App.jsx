@@ -10,13 +10,11 @@ import A_basicjsx from "./components/C_JSX/A_basicjsx.jsx";
 import B_Usejavascript from "./components/C_JSX/B_Usejavascript.jsx";
 import C_UseControl from "./components/C_JSX/C_UseControl.jsx";
 import D_ExportData from "./components/C_JSX/D_ExportData.jsx";
-import A_basicStyle from "./components/D_style/A_basicStyle.jsx";
+import A_BasicStyle from "./components/D_style/A_BasicStyle.jsx";
 import B_ModulTest from "./components/D_style/B_ModulTest.jsx";
 import C_StyledComponent from "./components/D_style/C_StyledComponent.jsx";
-import D_StyledComponentProps from "./components/D_style/D_StyledComponentProps.jsx";
 import A_EventContainer from "./components/E_event/A_EventContainer.jsx";
 import DataContainer from "./components/F_datamanage/DataContainer.jsx";
-
 function App() {
   return (
     <>
@@ -36,12 +34,11 @@ function App() {
       <h1>외부데이터 가져와 컴포넌트에서 출력하기</h1>
       <D_ExportData />
       <h1>스타일 적용하기</h1>
-      <A_basicStyle></A_basicStyle>
+      <A_BasicStyle />
       <B_ModulTest />
-      <C_StyledComponent></C_StyledComponent>
-
-      <h1>이벤트 이용하기</h1>
-      <A_EventContainer></A_EventContainer>
+      <C_StyledComponent />
+      <h1>이벤트이용하기</h1>
+      <A_EventContainer />
       <h1>리액트에서 데이터 관리하기</h1>
       <DataContainer />
     </>
