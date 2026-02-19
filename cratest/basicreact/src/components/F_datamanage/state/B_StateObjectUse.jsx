@@ -3,7 +3,6 @@ import React, { useState } from "react";
 export default function B_StateObjectUse() {
   const [arrData, setArrData] = useState([]);
   const [objData, setObjData] = useState({});
-  const [count, setCount] = useState(0);
   const addArrData = (e) => {
     //값을 추가
     //State 값을 추가할때 항상 새로운 값을 생성해서 덮어쓰기함.
@@ -23,21 +22,21 @@ export default function B_StateObjectUse() {
   const isActive = (e) => {
     setObjData({ ...objData, isActive: e.target.value });
   };
-  //이걸 합친버전
-
-  const changeObject = (e) => {
-    const v = e.target.value;
-    // const name = e.target.name; //이렇게 이름으로 구별이 가능하다!
-    const { value, name } = e.target; //저걸 구조분해 해서 이렇게 하면 더 좋음
-    setObjData({ ...objData, [name]: v }); //그래서 같은 변수를 사용해서 삭제가 가능함
+  const changeObjData = (e) => {
+    // const v = e.target.value;
+    // const name = e.target.name;
+    const { value, name } = e.target;
+    setObjData({ ...objData, [name]: value });
   };
-
+  const [count, setCount] = useState(0);
   const addCount = () => {
-    setCount(count + 1); // ++가 안되는것도 비동기때문에 후위연산이 안먹어서 그럼
-    //setCount(count + 1); //이렇게 2개씩 넣으면 비동기라서 첫번째거 수정한 값이 반영되지 않고 다시 0에서 1로감
-    //setCount(count + 1);
+    // setCount(count + 1);
+    // setCount(count + 1);
     setCount((prev) => {
-      return prev + 1; //<-콜백함수라서 이렇게 해줘야 동기처리가 가능하다 이러면
+      return prev + 1;
+    });
+    setCount((prev) => {
+      return prev + 1;
     });
   };
   return (
@@ -66,29 +65,41 @@ export default function B_StateObjectUse() {
       </ul>
       <h4>객체 수정하기</h4>
       {/* 이름, 나이, 주소 isActive(true/false) */}
+      <input type="text" onChange={changeName} placeholder="이름입력" />
+      <input type="number" onChange={changeAge} placeholder="나이입력" />
+      <input type="text" onChange={changeAddress} placeholder="주소입력" />
+      <label>
+        <input type="radio" name="isActive" onChange={isActive} value="true" />
+        Yes
+      </label>
+      <label>
+        <input type="radio" name="isActive" onChange={isActive} value="false" />
+        No
+      </label>
+      <h4>한개 메소드로 처리하기</h4>
       <input
         type="text"
         name="name"
-        onChange={changeObject}
+        onChange={changeObjData}
         placeholder="이름입력"
       />
       <input
         type="number"
         name="age"
-        onChange={changeObject}
+        onChange={changeObjData}
         placeholder="나이입력"
       />
       <input
         type="text"
         name="address"
-        onChange={changeObject}
+        onChange={changeObjData}
         placeholder="주소입력"
       />
       <label>
         <input
           type="radio"
           name="isActive"
-          onChange={changeObject}
+          onChange={changeObjData}
           value="true"
         />
         Yes
@@ -97,12 +108,11 @@ export default function B_StateObjectUse() {
         <input
           type="radio"
           name="isActive"
-          onChange={changeObject}
+          onChange={changeObjData}
           value="false"
         />
         No
       </label>
-
       <h3>이전값 수정하기</h3>
       <h3>{count}</h3>
       <button onClick={addCount}>증가(+)</button>

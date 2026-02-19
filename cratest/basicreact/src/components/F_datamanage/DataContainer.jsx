@@ -7,13 +7,13 @@ import C_styleclass from "./props/C_styleclass";
 import D_ChildComponent from "./props/D_ChildComponent";
 import D_ChildJSXComponent from "./props/D_ChildJSXComponent";
 import CommonComtainer from "./props/sample/CommonComtainer";
-import A_StateBasicComponent from "./state/A_StateBasicComponent";
+import A_StateBasicComponent from "./state/a_StateBasicComponent";
 import B_StateObjectUse from "./state/B_StateObjectUse";
 import C_StateUse from "./state/C_StateUse";
 import D_StateSendUse from "./state/D_StateSendUse";
-
-import E_LodingTest from "./state/E_LodingTest";
+import E_LoadingTest from "./state/E_LoadingTest";
 import F_EffectStateComponent from "./state/F_EffectStateComponent";
+import ContextContainer from "./context/contextContainer";
 
 export default function DataContainer() {
   const strData = "문자열데이터";
@@ -92,12 +92,14 @@ export default function DataContainer() {
       <h2>공통컴포넌트를 만들어 활용하기</h2>
       <CommonComtainer />
       <h1>state데이터 이용하기</h1>
-      <A_StateBasicComponent></A_StateBasicComponent>
+      <A_StateBasicComponent />
       <B_StateObjectUse />
       <C_StateUse />
       <D_StateSendUse />
-      <E_LodingTest />
+      <h2>로딩화면구현하기</h2>
+      <E_LoadingTest />
       <F_EffectStateComponent />
+      <ContextContainer />
     </div>
   );
 }
